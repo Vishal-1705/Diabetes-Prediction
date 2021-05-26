@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+
+<body>
+ <form action="{{ url_for("predict") }}" method="post">
+     <h1>DIABETES PREDICTION</h1>
+     <h3>Number of Pregnancies:</h3>
+     <input id="first" name="preg" type="number">
+     <h3>Glucose concentration:</h3>
+     <h4>(Normal glucose conc ranges from 70-100 mg/dL)</h4>
+     <input id="second" name="gluc" required="required">
+     <h3>Insulin level after glucose administration:</h3>
+     <h4>30 minutes after glucose administration	30-230 mIU/L
+         1 hour after glucose administration	    18-276 mIU/L
+         2 hour after glucose administration	    16-166 mIU/L</h4>
+     <input id="third" name="ins" required="required">
+     <h3>Body Mass Index:</h3>
+     <h4>Formula : (weight in kgs)/((height of the person in metres)^2)</h4>
+     <input id="fourth" name="bmi" required="required">
+     <h3>Diabetes Pedigree Function: (ranges between 0-1)</h3>
+     <input id="fifth" name="dpf" required="required">
+     <h3>Age of the person:</h3>
+     <input id="sixth" name="age" required="required">
+     <button id="sub" type="submit">Predict!</button>
+ </form>
+</body>
+  <h3> {{ prediction_text }} </h3>
+</html>
